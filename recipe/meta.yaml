@@ -32,9 +32,10 @@ requirements:
     - {{ cdt('libxrandr-devel') }}  # [linux]
     - {{ cdt('libxrender-devel') }}  # [linux]
     - {{ cdt('libxtst-devel') }}  # [linux]
-    - {{ cdt('mesa-libEGL-devel') }}  # [linux]
-    - {{ cdt('mesa-libGL-devel') }}  # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - {{ cdt('mesa-libegl-devel') }}  # [linux]
+    - {{ cdt('mesa-libgl-devel') }}  # [linux]
+    - {{ cdt('mesa-dri-drivers') }}  # [linux]
   host:
     - gtk3
     - zlib
@@ -53,6 +54,8 @@ requirements:
     - mesalib
     - xorg-libx11  # [linux]
     - xorg-libsm   # [linux]
+    - xorg-libxi   # [linux]
+    - xorg-libxcursor  # [linux]
   run:
     - gtk3
     - fontconfig
