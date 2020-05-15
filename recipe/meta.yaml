@@ -50,6 +50,7 @@ requirements:
     - cairo
     - gdk-pixbuf
     - libglu
+    - mesalib
     - xorg-libx11  # [linux]
     - xorg-libsm   # [linux]
   run:
