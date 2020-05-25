@@ -35,10 +35,10 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux</td>
+              <td>win</td>
               <td>
                 <a href="https://dev.azure.com/ramonaoptics/feedstock-builds/_build/latest?definitionId=18&branchName=master">
-                  <img src="https://dev.azure.com/ramonaoptics/feedstock-builds/_apis/build/status/wxwidgets-feedstock?branchName=master&jobName=linux&configuration=linux_" alt="variant">
+                  <img src="https://dev.azure.com/ramonaoptics/feedstock-builds/_apis/build/status/wxwidgets-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -48,15 +48,15 @@ Current build status
     </td>
   </tr>
   <tr>
-    <td>OSX</td>
+    <td>Linux</td>
     <td>
-      <img src="https://img.shields.io/badge/OSX-disabled-lightgrey.svg" alt="OSX disabled">
+      <img src="https://img.shields.io/badge/linux-disabled-lightgrey.svg" alt="linux disabled">
     </td>
   </tr>
   <tr>
-    <td>Windows</td>
+    <td>OSX</td>
     <td>
-      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
+      <img src="https://img.shields.io/badge/OSX-disabled-lightgrey.svg" alt="OSX disabled">
     </td>
   </tr>
   <tr>
