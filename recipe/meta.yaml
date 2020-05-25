@@ -13,7 +13,7 @@ source:
   sha256: fffc1d34dac54ff7008df327907984b156c50cff5a2f36ee3da6052744ab554a
 
 build:
-  number: 1
+  number: 2
   # Linux builds, now testing windows
   skip: true  # [not win]
   run_exports:
@@ -25,7 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - make         # [win]
+    - cmake        # [win]
     - ninja        # [win]
     - make         # [unix]
     - pkg-config   # [unix]
@@ -44,13 +44,17 @@ requirements:
     - zlib
     - libpng
     - libtiff
-    - libiconv
     - expat
+    # hmaarrfk 2020/05/25
+    # Even after we specify that we want to use sys jpeg
+    # conda claims we are still overlinking on windows
+    # not too sure why
     - jpeg
-    - xz     # [unix]
-    - glib   # [unix]
-    - pango  # [unix]
-    - cairo  # [unix]
+    - libiconv    # [unix]
+    - xz          # [unix]
+    - glib        # [unix]
+    - pango       # [unix]
+    - cairo       # [unix]
     - fontconfig  # [unix]
     # old version not available for windows
     # https://github.com/conda-forge/conda-forge-pinning-feedstock/pull/627
