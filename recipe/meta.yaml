@@ -9,8 +9,9 @@ source:
   sha256: 8aacd56b462f42fb6e33b4d8f5d40be5abc3d3b41348ea968aa515cc8285d813
 
 build:
-  number: 2
-  skip: true  # [not linux]
+  number: 1
+  # Linux builds, now testing windows
+  skip: true  # [not win]
   run_exports:
     # ABI seems to be stable between minor versions
     - {{ pin_subpackage('wxwidgets', max_pin='x.x') }}
@@ -20,29 +21,22 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - autotools_clang_conda        # [win]
-    - make
-    - pkg-config
-    - {{ cdt('libice-devel') }}  # [linux]
-    - {{ cdt('libsm-devel') }}  # [linux]
-    - {{ cdt('libxxf86vm-devel') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
-    - {{ cdt('libxcomposite-devel') }}  # [linux]
-    - {{ cdt('libxcursor-devel') }}  # [linux]
-    - {{ cdt('libxdamage-devel') }}  # [linux]
-    - {{ cdt('libxext-devel') }}  # [linux]
-    - {{ cdt('libxi-devel') }}  # [linux]
-    - {{ cdt('libxinerama-devel') }}  # [linux]
-    - {{ cdt('libxfixes-devel') }}  # [linux]
-    - {{ cdt('libxrandr-devel') }}  # [linux]
-    - {{ cdt('libxrender-devel') }}  # [linux]
-    - {{ cdt('libxtst-devel') }}  # [linux]
+    - make         # [win]
+    - ninja        # [win]
+    - make         # [unix]
+    - pkg-config   # [unix]
+
+    # Necessary CDTs
+    - {{ cdt('mesa-libgl-devel') }}      # [linux]
+    - {{ cdt('libxcursor-devel') }}      # [linux]
+    - {{ cdt('libxcomposite-devel') }}   # [linux]
+    - {{ cdt('libxtst-devel') }}         # [linux]
+    - {{ cdt('libxdamage-devel') }}      # [linux]
+    - {{ cdt('libxinerama-devel') }}     # [linux]
+    - {{ cdt('libxrandr-devel') }}       # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('mesa-libegl-devel') }}  # [linux]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
+    - {{ cdt('libxxf86vm-devel') }}      # [linux]
   host:
-    - gtk3
     - zlib
     - libpng
     - libtiff
@@ -54,15 +48,19 @@ requirements:
     - pango
     - jpeg
     - cairo
-    - gdk-pixbuf
-    - libglu
-    - mesalib
+    # old version not available for windows
+    # https://github.com/conda-forge/conda-forge-pinning-feedstock/pull/627
+    - gdk-pixbuf  # [unix]
+    - gtk3        # [linux]
+    # libglu seems necessary for osx too
+    # https://github.com/conda-forge/libglu-feedstock/pull/17
+    - libglu       # [unix]
+    - mesalib      # [unix]
     - xorg-libx11  # [linux]
     - xorg-libsm   # [linux]
     - xorg-libxi   # [linux]
-    - xorg-libxcursor  # [linux]
   run:
-    - gtk3
+    - gtk3         # [linux]
     - fontconfig
     - pango
     - xorg-libx11  # [linux]
