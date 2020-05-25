@@ -1,5 +1,5 @@
-mkdir build
-cd buid
+mkdir build_
+cd buid_
 
 cmake  ^
     -GNinja ^
