@@ -1,7 +1,5 @@
 c_compiler:
 - vs2017
-cairo:
-- '1.16'
 channel_sources:
 - ramonaoptics,conda-forge,defaults
 channel_targets:
@@ -10,42 +8,22 @@ cxx_compiler:
 - vs2017
 expat:
 - '2.2'
-fontconfig:
-- '2.13'
-glib:
-- '2.58'
 jpeg:
 - '9'
-libiconv:
-- '1.15'
 libpng:
 - '1.6'
 libtiff:
 - 4.1.0
-pango:
-- '1.42'
 pin_run_as_build:
-  cairo:
-    max_pin: x.x
   expat:
     max_pin: x.x
-  fontconfig:
-    max_pin: x
   jpeg:
     max_pin: x
-  libiconv:
-    max_pin: x.x
   libpng:
     max_pin: x.x
   libtiff:
     max_pin: x
-  pango:
-    max_pin: x.x
-  xz:
-    max_pin: x.x
   zlib:
     max_pin: x.x
-xz:
-- '5.2'
 zlib:
 - '1.2'
