@@ -7,6 +7,11 @@ cmake  ^
     -GNinja ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+    -DwxUSE_ZLIB=sys    ^
+    -DwxUSE_EXPAT=sys   ^
+    -DwxUSE_LIBJPEG=sys ^
+    -DwxUSE_LIBPNG=sys  ^
+    -DwxUSE_LIBTIFF=sys ^
     ..
 if errorlevel 1 exit 1
 

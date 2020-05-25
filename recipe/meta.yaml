@@ -77,7 +77,8 @@ test:
     - wx-config --prefix  # [unix]
     # This seems to exit 1 on windows
     - wxrc --help  # [unix]
-    - wxrc -h      # [win]
+    #- wxrc -h      # [win]
+    - if not exist %LIBRARY_BIN%\\wxrc.exe exit 1  # [win]
 
 
 about:
