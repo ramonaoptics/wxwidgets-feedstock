@@ -74,8 +74,11 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libwx_baseu-3.0${SHLIB_EXT}  # [unix]
     - test -f ${PREFIX}/include/wx-3.0/wx/wx.h           # [unix]
+    - wx-config --prefix  # [unix]
+    # This seems to exit 1 on windows
     - wxrc --help  # [unix]
-    - wx-config --prefix
+    - wxrc -h      # [win]
+
 
 about:
   home: https://www.wxwidgets.org/
