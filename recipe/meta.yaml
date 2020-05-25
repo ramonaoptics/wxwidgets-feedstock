@@ -74,7 +74,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libwx_baseu-3.0${SHLIB_EXT}  # [unix]
     - test -f ${PREFIX}/include/wx-3.0/wx/wx.h           # [unix]
-    - wxrc --help
+    - wxrc --help  # [unix]
+    - wx-config --prefix
 
 about:
   home: https://www.wxwidgets.org/
